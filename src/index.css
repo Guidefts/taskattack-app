@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #1a1a1a;
+  --color-surface: #2a2a2a;
+  --color-surface-light: #3a3a3a;
+  --color-primary: #EF442D;
+  --color-text: #232223;
+}
+
+body {
+  background-color: var(--color-background);
+  color: white;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.bg-background { background-color: var(--color-background); }
+.bg-surface { background-color: var(--color-surface); }
+.bg-surface-light { background-color: var(--color-surface-light); }
+.bg-primary { background-color: var(--color-primary); }
+
+.text-primary { color: var(--color-primary); }
+
+/* Layout Classes */
+.page-container {
+  @apply min-h-screen pb-24;
+  background-color: var(--color-background);
+}
+
+.content-wrapper {
+  @apply w-full max-w-3xl mx-auto;
+  padding: 0 0.4rem;
+}
+
+@screen sm {
+  .content-wrapper {
+    padding: 0 1rem;
+    max-width: 50rem;
+  }
+}
+
+.nav-wrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Task Card Drag Animation */
+.task-drag-overlay {
+  @apply shadow-lg;
+  background-color: var(--color-surface-light);
+  transform: scale(1.02);
+  cursor: grabbing;
+}
+
+.task-drag-preview {
+  @apply opacity-50;
+}
+
+/* Form Elements */
+input, textarea {
+  background-color: var(--color-surface-light);
+  border: none;
+  color: white;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+input:focus, textarea:focus {
+  ring: 2px solid var(--color-primary);
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.task-title {
+  word-break: break-word;
+  white-space: pre-wrap;
+}
